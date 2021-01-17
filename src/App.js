@@ -1,20 +1,18 @@
-import React from 'react';
+import React, { useMemo, useReducer } from 'react';
+import Layout from './layout';
+import { initialState, reducer } from './store/reducer';
+
+export const AppContext = React.createContext();
 
 function App() {
+  const [state, dispatch] = useReducer(reducer, initialState);
+
+  const contextValue = useMemo(() => ({ state, dispatch }), [state, dispatch]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>React</p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AppContext.Provider value={contextValue}>
+      <Layout />
+    </AppContext.Provider>
   );
 }
 

@@ -1,0 +1,2 @@
+export const SET_MOVIES_LIST = 'SET_MOVIES_LIST';
+export const ADD_TO_NOMINATION = 'ADD_TO_NOMINATION';
