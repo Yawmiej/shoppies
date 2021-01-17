@@ -1,7 +1,7 @@
 /* eslint-disable consistent-return */
 import { useRef } from 'react';
 
-const BASE_URL = 'http://www.omdbapi.com/';
+const BASE_URL = 'https://www.omdbapi.com/';
 const API_KEY = 'b8494e06';
 const TYPE = 'movie';
 
