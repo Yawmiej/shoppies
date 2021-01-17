@@ -10,7 +10,7 @@ Check the [documentation](https://polaris.shopify.com/) for more information
 
 ### Dependencies and Utilities
 
-1. Movie Search - [OMBD](http://www.omdbapi.com/)
+1. Movie Search - [OMDB](http://www.omdbapi.com/)
 2. Linter - [ESLINT](https://eslint.org/)
 
 ## Available Scripts
