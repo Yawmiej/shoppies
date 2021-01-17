@@ -1,4 +1,18 @@
-@import url(https://db.onlinewebfonts.com/c/19d93ed94fcde59d609dd56bb0f1e9f0?family=SF+UI+Display);
+@font-face {
+  font-family: 'SF UI Display';
+  src: url('https://db.onlinewebfonts.com/t/19d93ed94fcde59d609dd56bb0f1e9f0.eot'); /* IE9*/
+  src: url('https://db.onlinewebfonts.com/t/19d93ed94fcde59d609dd56bb0f1e9f0.eot?#iefix')
+      format('embedded-opentype'),
+    /* IE6-IE8 */ url('https://db.onlinewebfonts.com/t/19d93ed94fcde59d609dd56bb0f1e9f0.woff2')
+      format('woff2'),
+    /* chrome firefox */
+      url('https://db.onlinewebfonts.com/t/19d93ed94fcde59d609dd56bb0f1e9f0.woff') format('woff'),
+    /* chrome firefox */ url('https://db.onlinewebfonts.com/t/19d93ed94fcde59d609dd56bb0f1e9f0.ttf')
+      format('truetype'),
+    /* chrome firefox opera Safari, Android, iOS 4.2+*/
+      url('https://db.onlinewebfonts.com/t/19d93ed94fcde59d609dd56bb0f1e9f0.svg#SF UI Display')
+      format('svg'); /* iOS 4.1- */
+}
 
 body {
   font-family: 'SF UI Display';
