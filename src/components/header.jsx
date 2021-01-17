@@ -1,9 +1,11 @@
 import React, { useCallback, useState } from 'react';
-import { ActionList, Frame, TopBar } from '@shopify/polaris';
+import { ActionList, TopBar } from '@shopify/polaris';
+import useFetch from '../hooks/useFetch';
 
 function Header() {
   const [isSearchActive, setIsSearchActive] = useState(false);
   const [searchValue, setSearchValue] = useState('');
+  const { fetchData } = useFetch();
 
   const handleSearchChange = useCallback((value) => {
     setSearchValue(value);
@@ -19,8 +21,8 @@ function Header() {
     />
   );
 
-  const searchResultAction = useCallback(() => {
-    console.log(searchValue);
+  const searchResultAction = useCallback(async () => {
+    await fetchData(`s=${searchValue}`);
   }, [searchValue]);
 
   const searchResultMarkup = (
@@ -29,10 +31,9 @@ function Header() {
 
   const handleSearchResultsDismiss = useCallback(() => {
     setIsSearchActive(false);
-    setSearchValue('');
   }, []);
 
-  const topBarMarkup = (
+  return (
     <TopBar
       searchResultsVisible={isSearchActive}
       searchField={searchFieldMarkup}
@@ -40,8 +41,6 @@ function Header() {
       onSearchResultsDismiss={handleSearchResultsDismiss}
     />
   );
-
-  return <Frame topBar={topBarMarkup} />;
 }
 
 export default Header;

@@ -1,15 +1,15 @@
 import React from 'react';
-import { Button } from '@shopify/polaris';
+import { Button, Frame } from '@shopify/polaris';
 import Header from './components/header';
+import Body from './components/body';
 
 function Layout() {
   return (
-    // <Page>
-    <>
+    <Frame>
       <Header />
+      <Body />
       <Button primary>OMo</Button>
-    </>
-    // </Page>
+    </Frame>
   );
 }
 
