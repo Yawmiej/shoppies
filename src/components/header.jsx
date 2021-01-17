@@ -2,15 +2,13 @@ import React, { useCallback, useContext, useState } from 'react';
 import { ActionList, TopBar } from '@shopify/polaris';
 import useFetch from '../hooks/useFetch';
 import AppContext from '../_context';
-import { setMoviesList, setPageLoading } from '../store/actions';
+import { setError, setMoviesList, setPageLoading } from '../store/actions';
 
 function Header() {
   const [isSearchActive, setIsSearchActive] = useState(false);
   const [searchValue, setSearchValue] = useState('');
   const { fetchData } = useFetch();
-  const { state, dispatch } = useContext(AppContext);
-
-  console.log(state);
+  const { dispatch } = useContext(AppContext);
 
   const handleSearchChange = useCallback((value) => {
     setSearchValue(value);
@@ -33,7 +31,9 @@ function Header() {
     dispatch(setPageLoading(true));
 
     const [err, result] = await fetchData(`s=${searchValue}`);
-    if (!err) dispatch(setMoviesList(result));
+    if (err) {
+      dispatch(setError({ title: err.Error, body: '' }));
+    } else dispatch(setMoviesList(result));
   }, [searchValue]);
 
   const searchResultMarkup = (

@@ -49,3 +49,19 @@ body {
 .movie-card.media .Polaris-Card {
   height: 100%;
 }
+
+.nominations .Polaris-Button.Polaris-Button--newDesignLanguage,
+.error-banner .Polaris-Button.Polaris-Button--newDesignLanguage {
+  background: none;
+  border: none;
+}
+
+.nominations .Polaris-Button.Polaris-Button--newDesignLanguage:hover,
+.error-banner .Polaris-Button.Polaris-Button--newDesignLanguage {
+  background: none;
+  border: none;
+}
+
+.error-banner {
+  margin-bottom: 4rem;
+}
