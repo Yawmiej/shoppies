@@ -2,7 +2,7 @@ import React, { useCallback, useContext, useState } from 'react';
 import { ActionList, TopBar } from '@shopify/polaris';
 import useFetch from '../hooks/useFetch';
 import AppContext from '../_context';
-import { setMoviesList } from '../store/actions';
+import { setMoviesList, setPageLoading } from '../store/actions';
 
 function Header() {
   const [isSearchActive, setIsSearchActive] = useState(false);
@@ -27,6 +27,11 @@ function Header() {
   );
 
   const searchResultAction = useCallback(async () => {
+    if (!searchValue) return;
+    setIsSearchActive(false);
+
+    dispatch(setPageLoading(true));
+
     const [err, result] = await fetchData(`s=${searchValue}`);
     if (!err) dispatch(setMoviesList(result));
   }, [searchValue]);

@@ -7,3 +7,24 @@ body {
 .Polaris-Card {
   border-radius: 5px;
 }
+
+.center-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.flex-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.movie-card {
+  min-width: 190px;
+  margin: 0 1rem 2rem 0;
+  /* margin-bottom: 2rem;
+  margin-bottom: 2rem; */
+}
