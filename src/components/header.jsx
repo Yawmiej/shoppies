@@ -31,8 +31,9 @@ function Header() {
     dispatch(setPageLoading(true));
 
     const [err, result] = await fetchData(`s=${searchValue}`);
-    if (err) {
-      dispatch(setError({ title: err.Error, body: '' }));
+
+    if (err || result.Error) {
+      dispatch(setError({ title: err ? err.Error : result.Error, body: '' }));
     } else dispatch(setMoviesList(result));
   }, [searchValue]);
 

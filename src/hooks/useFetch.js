@@ -3,12 +3,13 @@ import { useRef } from 'react';
 
 const BASE_URL = 'http://www.omdbapi.com/';
 const API_KEY = 'b8494e06';
+const TYPE = 'movie';
 
 const useFetch = () => {
   const cache = useRef({});
 
   const fetchData = async (query) => {
-    const url = `${BASE_URL}?apikey=${API_KEY}&${query}`;
+    const url = `${BASE_URL}?apikey=${API_KEY}&type=${TYPE}&${query}`;
     if (!query) return;
 
     //  Check if data exist in cache and return
