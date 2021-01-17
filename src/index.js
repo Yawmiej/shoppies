@@ -6,6 +6,7 @@ import App from './App';
 import logo from './assets/img/Inner.svg';
 
 import '@shopify/polaris/dist/styles.css';
+import './assets/css/styles.css';
 
 const theme = {
   colors: {

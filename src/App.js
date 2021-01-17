@@ -1,8 +1,7 @@
 import React, { useMemo, useReducer } from 'react';
 import Layout from './layout';
 import { initialState, reducer } from './store/reducer';
-
-export const AppContext = React.createContext();
+import AppContext from './_context';
 
 function App() {
   const [state, dispatch] = useReducer(reducer, initialState);

@@ -5,3 +5,7 @@ export const ADD_TO_NOMINATION = 'ADD_TO_NOMINATION';
 export function setPageLoading(payload) {
   return { type: SET_PAGE_LOADING, payload };
 }
+
+export function setMoviesList(payload) {
+  return { type: SET_MOVIES_LIST, payload };
+}

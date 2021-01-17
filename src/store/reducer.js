@@ -2,13 +2,13 @@ import { SET_MOVIES_LIST, ADD_TO_NOMINATION, SET_PAGE_LOADING } from './actions'
 
 export const initialState = {
   pageLoading: false,
-  movies: [],
+  movies: {},
   nominations: [],
 };
 
 const setPageLoading = (state, payload) => ({ ...state, pageLoading: payload });
 
-const setMovies = (state, payload) => ({ ...state, movies: [...payload] });
+const setMovies = (state, payload) => ({ ...state, movies: payload, pageLoading: false });
 
 const addToNomination = (state, payload) => ({
   state,
