@@ -8,6 +8,17 @@ body {
   border-radius: 5px;
 }
 
+.Polaris-Button.Polaris-Button--newDesignLanguage {
+  background: #008060;
+  color: #fff;
+  border: 1px solid #008060;
+}
+
+.Polaris-Button.Polaris-Button--newDesignLanguage:hover {
+  background: #015f48;
+  border: 1px solid #015f48;
+}
+
 .center-flex {
   display: flex;
   justify-content: center;
@@ -22,9 +33,19 @@ body {
   width: 100%;
 }
 
+.flex-row.media {
+  align-items: stretch;
+}
+
 .movie-card {
-  min-width: 190px;
+  width: 190px;
   margin: 0 1rem 2rem 0;
-  /* margin-bottom: 2rem;
-  margin-bottom: 2rem; */
+}
+
+.movie-card.media {
+  width: 250px;
+}
+
+.movie-card.media .Polaris-Card {
+  height: 100%;
 }

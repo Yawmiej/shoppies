@@ -9,3 +9,7 @@ export function setPageLoading(payload) {
 export function setMoviesList(payload) {
   return { type: SET_MOVIES_LIST, payload };
 }
+
+export function addToNomination(payload) {
+  return { type: ADD_TO_NOMINATION, payload };
+}

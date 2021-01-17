@@ -3,7 +3,7 @@ import { SET_MOVIES_LIST, ADD_TO_NOMINATION, SET_PAGE_LOADING } from './actions'
 export const initialState = {
   pageLoading: false,
   movies: {},
-  nominations: [],
+  nominations: {},
 };
 
 const setPageLoading = (state, payload) => ({ ...state, pageLoading: payload });
@@ -11,8 +11,8 @@ const setPageLoading = (state, payload) => ({ ...state, pageLoading: payload });
 const setMovies = (state, payload) => ({ ...state, movies: payload, pageLoading: false });
 
 const addToNomination = (state, payload) => ({
-  state,
-  nominations: [payload, ...state.nominations],
+  ...state,
+  nominations: { ...state.nominations, [payload.imdbID]: payload },
 });
 
 export function reducer(state = initialState, { type, payload }) {
