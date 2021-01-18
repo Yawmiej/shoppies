@@ -38,7 +38,9 @@ function Header() {
   }, [searchValue]);
 
   const searchResultMarkup = (
-    <ActionList items={[{ content: `Search: ${searchValue}`, onAction: searchResultAction }]} />
+    <ActionList
+      items={[{ content: `Click to search: ${searchValue}`, onAction: searchResultAction }]}
+    />
   );
 
   const handleSearchResultsDismiss = useCallback(() => {
